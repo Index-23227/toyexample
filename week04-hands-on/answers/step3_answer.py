@@ -60,5 +60,32 @@ ws2.append(["법인명", "매출합계"])
 for name, total in sorted(corp_totals.items()):
     ws2.append([name, total])
 
+# 시트3: 월별 피벗 (법인×월 매출 합계)
+pivot = defaultdict(lambda: defaultdict(float))
+months = set()
+for r in all_rows:
+    pivot[r["법인명"]][r["월"]] += r["금액"]
+    months.add(r["월"])
+
+months_sorted = sorted(months)
+ws3 = out_wb.create_sheet("월별피벗")
+ws3.append(["법인명"] + months_sorted + ["합계"])
+for name in sorted(pivot.keys()):
+    row_total = sum(pivot[name][m] for m in months_sorted)
+    ws3.append([name] + [pivot[name][m] for m in months_sorted] + [row_total])
+
+print("\n=== 법인별 × 월별 매출 ===")
+print(f"{'법인명':<8}", end="")
+for m in months_sorted:
+    print(f" {m:>14}", end="")
+print(f" {'합계':>14}")
+print("-" * (8 + 15 * (len(months_sorted) + 1)))
+for name in sorted(pivot.keys()):
+    print(f"{name:<8}", end="")
+    for m in months_sorted:
+        print(f" {pivot[name][m]:>14,.0f}", end="")
+    row_total = sum(pivot[name][m] for m in months_sorted)
+    print(f" {row_total:>14,.0f}")
+
 out_wb.save("data/법인매출통합.xlsx")
 print("\n결과 저장: data/법인매출통합.xlsx")
