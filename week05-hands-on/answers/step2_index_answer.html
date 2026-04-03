@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재경팀 매출 대시보드</title>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #2c5f8a;
+            padding-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th {
+            background: #2c5f8a;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #eee;
+        }
+        tr:hover {
+            background: #f0f7ff;
+        }
+        td:nth-child(3), td:nth-child(5),
+        th:nth-child(3), th:nth-child(5) {
+            text-align: right;
+        }
+        td:nth-child(4), th:nth-child(4) {
+            text-align: right;
+        }
+        a {
+            color: #2c5f8a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>재경팀 매출 대시보드</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>법인명</th>
+                <th>통화</th>
+                <th>외화 합계</th>
+                <th>환율</th>
+                <th>원화 환산</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td><a href="/corp/{{ row['corp_code'] }}">{{ row['corp_name'] }}</a></td>
+                <td>{{ row['currency'] }}</td>
+                <td>{{ row['total'] | comma }}</td>
+                <td>{{ row['rate'] }}</td>
+                <td>{{ row['krw_total'] | comma }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

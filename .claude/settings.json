@@ -48,7 +48,23 @@
       "Bash(/c/Users/PC/AppData/Local/Programs/Python/Python*/python.exe answers/step4b_answer.py)",
       "Bash(git add:*)",
       "Bash(git commit -m ':*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(python3 -c ':*)",
+      "Bash(ls /c/Python*)",
+      "Bash(ls /c/Users/PC/AppData/Local/Programs/Python*)",
+      "Bash(py -m pip list)",
+      "Bash(py expense_report.py)",
+      "Bash(start \"\" \"c:\\\\Users\\\\PC\\\\GitHub\\\\toyexample\\\\week04-hands-on\\\\data\\\\경비_시각화.html\")",
+      "Bash(py merge_sales.py)",
+      "Bash(py verify_all.py)",
+      "WebFetch(domain:rammmaa.github.io)",
+      "Bash(python data/create_db.py)",
+      "Bash(py data/create_db.py)",
+      "Bash(py answers/step1_answer.py)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\PC\\Downloads",
+      "c:\\Users\\PC\\GitHub\\toyexample\\week05-hands-on"
     ]
   }
 }
