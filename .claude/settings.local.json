@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ':*)",
+      "Bash(python3 -c ':*)",
+      "Bash(py -c ':*)",
+      "Bash(py test_scenario1_no_harness.py)",
+      "Bash(py test_scenario2_tool_only.py)",
+      "Bash(py test_scenario3_with_harness.py)",
+      "Bash(where python3:*)",
+      "Bash(where py:*)",
+      "Bash(where python:*)",
+      "Bash(ls /c/Python*/python.exe)",
+      "Read(//c/Users/PC/**)",
+      "Bash(/c/Users/PC/AppData/Local/Programs/Python/Python312/python.exe -c ':*)",
+      "Bash(py -3.12 -c ':*)",
+      "Bash(py -3.12 nomd_run1.py)",
+      "Bash(/c/Users/PC/AppData/Local/Programs/Python/Python312/python.exe nomd_run3.py)",
+      "Bash(/c/Users/PC/AppData/Local/Programs/Python/Python312/python.exe nomd_run2.py)",
+      "Read(//c/ProgramData/anaconda3/**)",
+      "Bash(py -c \"import sys; sys.stdout.buffer.write\\(sys.stdin.buffer.read\\(\\)\\)\")",
+      "Bash(py no_md_b.py)",
+      "Bash(/c/Users/PC/AppData/Local/Programs/Python/Python312/python.exe \"C:/Users/PC/GitHub/toyexample/week04-hands-on/with_md_b.py\")",
+      "Bash(py no_md_a.py)",
+      "Bash(py with_md_a.py)",
+      "Bash(ls -la \"C:/Users/PC/GitHub/toyexample/week04-hands-on/\"*재경*)",
+      "Bash(ls -la \"C:/Users/PC/GitHub/toyexample/week04-hands-on/[재경]\"*)",
+      "Bash(rm -f \"[재경]경비정리_202603_v1.xlsx\")",
+      "Bash(ls -la \"C:/Users/PC/GitHub/toyexample/week04-hands-on/\"*경비정리*)",
+      "Bash(rm -f '[재경]경비정리_202603_v1.xlsx')",
+      "Bash(py -X utf8 no_md_b.py)",
+      "Bash(mv exercises:*)",
+      "Bash(mv answers:*)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\PC\\GitHub\\toyexample\\week04-hands-on",
+      "c:\\Users\\PC\\GitHub\\toyexample\\week04-hands-on"
+    ]
+  }
+}
