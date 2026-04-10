@@ -8,7 +8,7 @@
 | `import_sales_answer.py` | Step 1 | Excel 8개 → monthly_sales UPSERT (멱등) |
 | `fetch_rates_answer.py` | Step 2 | 한국수출입은행 API → exchange_rates UPSERT (함정 4종 + 8통화) |
 | `run_pipeline_answer.py` | Step 3 | fetch + import을 함수로 import, 로그 append, 실패 시 flag 알림 |
-| `register_task_answer.ps1` | Step 4 | Windows 작업 스케줄러 등록 PowerShell |
+| `register_task_answer.ps1.txt` | Step 4 | Windows 작업 스케줄러 등록 PowerShell |
 
 ## 사용법 (강사용)
 
@@ -17,7 +17,7 @@
 - **Step 1 검증**: "`answers/import_sales_answer.py`를 두 번 실행해서 멱등성 확인해줘."
 - **Step 2 검증**: "`.env`에 인증키 설정하고 `answers/fetch_rates_answer.py`를 실행해줘."
 - **Step 3 검증**: "`answers/run_pipeline_answer.py`를 돌리고 `logs/`에 생긴 파일을 보여줘."
-- **Step 4 검증**: "`answers/register_task_answer.ps1`의 내용을 보여줘. 실제 등록은 시연 PC에서만."
+- **Step 4 검증**: "`answers/register_task_answer.ps1.txt`의 내용을 보여줘. 실제 등록은 시연 PC에서만."
 
 ## 자립성 구조
 
@@ -34,4 +34,4 @@
 - **`import_sales_answer.py`**: 8법인 × 6개월 = 48행 UPSERT 멱등성 검증 완료
 - **`fetch_rates_answer.py`**: SSL 우회 적용, 8통화 폴백 검증 완료. 실제 API 호출은 강사가 공용 키로 사전 확인 필요
 - **`run_pipeline_answer.py`**: 오케스트레이션·로그 append·실패 flag 생성·복구 시 flag 삭제 검증 완료
-- **`register_task_answer.ps1`**: PowerShell 파서 문법 검증 완료. 실제 등록은 시연 PC에서만
+- **`register_task_answer.ps1.txt`**: PowerShell 파서 문법 검증 완료. 실제 등록은 시연 PC에서만

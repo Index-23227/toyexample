@@ -249,7 +249,7 @@ PowerShell에서 `schtasks` 명령 또는 `Register-ScheduledTask` cmdlet 사용
 - **실행 시각**: 매일 11:30 (한국수출입은행 환율 게시가 11:00 이후이므로 여유를 두고 11:30).
 - **Task 이름**: `Week06Pipeline`
 - **작업 내용**: `run_pipeline.py`를 프로젝트 루트(`week06-hands-on/`)에서 실행.
-- **등록 스크립트**: `answers/register_task_answer.ps1` 참고 (강사용).
+- **등록 스크립트**: `answers/register_task_answer.ps1.txt` 참고 (강사용). Gmail 보안 차단 방지를 위해 `.ps1.txt` 확장자. 사용 시 `.txt`를 제거.
 - **수강생 PC에는 실제로 등록하지 않는다** — "등록 스크립트가 어떻게 생겼는지 보고, `taskschd.msc`로 내가 원할 때 수동으로 돌릴 수 있다"까지만 경험시킨다.
 
 ### 주의
